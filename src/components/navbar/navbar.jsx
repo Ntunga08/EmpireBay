@@ -12,7 +12,7 @@ const Navbar = () => {
 
         {/* Menu Links */}
         <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
-          <li><a href="#home" className="hover:text-blue-600">Home</a></li>
+          <li><a href="/" className="hover:text-blue-600">Home</a></li>
           <li><a href="#about" className="hover:text-blue-600">About</a></li>
           <li><a href="#menu" className="hover:text-blue-600">Menu</a></li>
           <li><a href="#events" className="hover:text-blue-600">Events</a></li>
