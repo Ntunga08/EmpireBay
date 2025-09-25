@@ -7,12 +7,11 @@ const slides = [
   {
     image: back,
     message: "Welcome to Empire Bay - Feel the Vibe",
-    message1: "Experience the Best Drinks & Events in Bagamoyo"
+
   },
   {
     image: sam,
     message: "Discover the Best Drinks in Town",
-    message1: "Themed parties"
   },
   {
     image: image,
@@ -60,7 +59,7 @@ const HeroSection = () => {
                 {slide.message}
               </p>
               <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-                 {slide.message1}
+                Experience the Best Drinks & Events in Bagamoyo
               </h1>
               <p className="text-lg md:text-2xl mb-8 text-gray-200">
                 From live music and festivals to weddings, boxing nights, and more!
