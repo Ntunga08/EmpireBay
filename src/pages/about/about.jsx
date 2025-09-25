@@ -1,4 +1,5 @@
 import React from "react";
+import image from "../../assets/heroImage/image.png";
 
 const About = () => {
   return (
@@ -20,7 +21,7 @@ const About = () => {
           <div className="text-center space-y-6">
             <div className="relative overflow-hidden rounded-2xl shadow-lg">
               <img 
-                src="/api/placeholder/400/250" 
+                src={image} 
                 alt="Empire Bay Vision" 
                 className="w-full h-64 object-cover"
               />
@@ -45,7 +46,7 @@ const About = () => {
           <div className="text-center space-y-6">
             <div className="relative overflow-hidden rounded-2xl shadow-lg">
               <img 
-                src="/api/placeholder/400/250" 
+                src={image} 
                 alt="Empire Bay Mission" 
                 className="w-full h-64 object-cover"
               />
@@ -70,7 +71,7 @@ const About = () => {
           <div className="text-center space-y-6">
             <div className="relative overflow-hidden rounded-2xl shadow-lg">
               <img 
-                src="/api/placeholder/400/250" 
+                src={image} 
                 alt="Empire Bay Values" 
                 className="w-full h-64 object-cover"
               />
@@ -115,7 +116,7 @@ const About = () => {
             </div>
             <div className="relative">
               <img 
-                src="/api/placeholder/500/400" 
+                src={image} 
                 alt="Empire Bay Interior" 
                 className="rounded-xl shadow-lg w-full"
               />
