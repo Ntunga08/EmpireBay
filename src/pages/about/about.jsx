@@ -1,53 +1,183 @@
 import React from "react";
-import image from "../../assets/heroImage/image.png";
 
 const About = () => {
   return (
-    <section id="about" className="py-16 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12 text-center">
-        
-        {/* Heading */}
-        <h2 className="text-4xl font-bold text-blue-900 mb-6">
-          About Us
-        </h2>
-        <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
-          Welcome to <span className="font-semibold text-blue-800">Empire Bay</span>, 
-          the ultimate spot in Bagamoyo to relax, enjoy live music, and sip the finest beers.  
-          We’re more than a bar — we’re a community of friends, laughter, and unforgettable nights.
-        </p>
+    <section id="about" className="py-16 bg-gray-100 text-gray-900">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-16">
 
-        {/* Story + Image */}
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <img
-        src={image}
-            alt="Our Bar"
-            className="rounded-2xl shadow-lg"
-          />
-          <div className="text-left">
-            <h3 className="text-4xl font-semibold text-blue-800 mb-4">
-              Our Story
-            </h3>
-            <p className="text-gray-700 text-xl leading-relaxed mb-4">
-              Empire Bay was founded with one vision — to bring people together
-              over great drinks, live events, and an atmosphere that feels like home.  
-              Whether it’s game night, karaoke, or just a chill evening, we’re here to make it special.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              With a wide variety of beers, signature cocktails, and weekly events, 
-              we’re proud to be the go-to bar for fun, friendship, and flavor.
-            </p>
+        {/* Heading */}
+        <div className="text-center">
+          <h2 className="text-5xl font-bold text-blue-900 mb-4">About Us</h2>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            Welcome to <span className="font-semibold text-blue-800">Empire Bay</span>, 
+            where exceptional experiences meet authentic hospitality in the heart of Bagamoyo.
+          </p>
+        </div>
+
+        {/* Three Column Layout - Vision, Mission, Values */}
+        <div className="grid md:grid-cols-3 gap-8 mt-16">
+          {/* Our Vision */}
+          <div className="text-center space-y-6">
+            <div className="relative overflow-hidden rounded-2xl shadow-lg">
+              <img 
+                src="/api/placeholder/400/250" 
+                alt="Empire Bay Vision" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-blue-900 bg-opacity-20"></div>
+            </div>
+            <button className="bg-blue-400 hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition-colors">
+              Ask More
+            </button>
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold text-gray-700 uppercase tracking-wide">
+                OUR VISION
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                To become the most beloved social destination in Bagamoyo, 
+                where every guest experiences the perfect blend of 
+                quality beverages, live entertainment, and genuine hospitality.
+              </p>
+            </div>
+          </div>
+
+          {/* Mission Statement */}
+          <div className="text-center space-y-6">
+            <div className="relative overflow-hidden rounded-2xl shadow-lg">
+              <img 
+                src="/api/placeholder/400/250" 
+                alt="Empire Bay Mission" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-blue-900 bg-opacity-20"></div>
+            </div>
+            <button className="bg-blue-400 hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition-colors">
+              Ask More
+            </button>
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold text-gray-700 uppercase tracking-wide">
+                MISSION STATEMENT
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                To provide exceptional bar experiences that bring 
+                Value, Quality, and Community connection through 
+                premium beverages, live entertainment, and memorable events.
+              </p>
+            </div>
+          </div>
+
+          {/* Core Values */}
+          <div className="text-center space-y-6">
+            <div className="relative overflow-hidden rounded-2xl shadow-lg">
+              <img 
+                src="/api/placeholder/400/250" 
+                alt="Empire Bay Values" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-blue-900 bg-opacity-20"></div>
+            </div>
+            <button className="bg-blue-400 hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition-colors">
+              Ask More
+            </button>
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold text-gray-700 uppercase tracking-wide">
+                CORE VALUES
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Quality,<br/>
+                Community, Authenticity,<br/>
+                Excellence, Entertainment
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Our Story Section */}
+        <div className="bg-white p-12 rounded-2xl shadow-lg mt-16">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <h3 className="text-4xl font-bold text-blue-800 mb-6">Our Story</h3>
+              <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+                <p>
+                  Empire Bay was born from a vision to create more than just a bar – 
+                  we wanted to establish a cornerstone of community life in Bagamoyo.
+                </p>
+                <p>
+                  Founded on principles of quality, authenticity, and genuine hospitality, 
+                  we've cultivated an atmosphere where locals and visitors alike can 
+                  connect over exceptional beverages and unforgettable experiences.
+                </p>
+                <p>
+                  Today, we stand proud as Bagamoyo's premier destination for 
+                  live music, premium drinks, and the kind of memories that last a lifetime.
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src="/api/placeholder/500/400" 
+                alt="Empire Bay Interior" 
+                className="rounded-xl shadow-lg w-full"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* What Sets Us Apart */}
+        <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white p-12 rounded-2xl shadow-lg">
+          <h3 className="text-4xl font-bold mb-8 text-center">What Sets Us Apart</h3>
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="text-center space-y-3">
+              <div className="bg-white bg-opacity-20 p-4 rounded-full w-16 h-16 mx-auto flex items-center justify-center">
+                <span className="text-2xl">🍺</span>
+              </div>
+              <h4 className="text-xl font-semibold">Premium Selection</h4>
+              <p className="text-blue-100">Curated local & imported beverages</p>
+            </div>
+            <div className="text-center space-y-3">
+              <div className="bg-white bg-opacity-20 p-4 rounded-full w-16 h-16 mx-auto flex items-center justify-center">
+                <span className="text-2xl">🎵</span>
+              </div>
+              <h4 className="text-xl font-semibold">Live Entertainment</h4>
+              <p className="text-blue-100">Regular live music and events</p>
+            </div>
+            <div className="text-center space-y-3">
+              <div className="bg-white bg-opacity-20 p-4 rounded-full w-16 h-16 mx-auto flex items-center justify-center">
+                <span className="text-2xl">👥</span>
+              </div>
+              <h4 className="text-xl font-semibold">Community Hub</h4>
+              <p className="text-blue-100">Where friendships are forged</p>
+            </div>
+            <div className="text-center space-y-3">
+              <div className="bg-white bg-opacity-20 p-4 rounded-full w-16 h-16 mx-auto flex items-center justify-center">
+                <span className="text-2xl">⭐</span>
+              </div>
+              <h4 className="text-xl font-semibold">Exceptional Service</h4>
+              <p className="text-blue-100">Staff dedicated to your experience</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Location & Contact */}
+        <div className="bg-white p-8 rounded-2xl shadow-lg text-center space-y-4">
+          <h3 className="text-3xl font-bold text-blue-800 mb-4">Visit Empire Bay</h3>
+          <div className="max-w-2xl mx-auto space-y-2 text-gray-700">
+            <p className="text-lg"><strong>Location:</strong> 123 Bar Street, Bagamoyo, Tanzania</p>
+            <p className="text-lg"><strong>Phone:</strong> +255 700 000 000</p>
+            <p className="text-lg"><strong>Email:</strong> info@empirebay.com</p>
           </div>
         </div>
 
         {/* CTA */}
-        <div className="mt-12">
+        <div className="text-center">
           <a
             href="#reserve"
-            className="bg-blue-900 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-700 transition"
+            className="bg-blue-900 hover:bg-blue-700 text-white px-12 py-4 rounded-lg font-semibold text-lg shadow-lg transition-colors inline-block"
           >
-            Visit Us Today
+            Experience Empire Bay Today
           </a>
         </div>
+
       </div>
     </section>
   );
