@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/navbar/navbar'
 import HeroSection from './pages/home/home'
 import About from './pages/about/about'
@@ -7,19 +7,15 @@ import Gallery from './pages/gallery/gallery'
 
 const App = () => {
   return (
-    <>
+    <Router>
       <Navbar />
-      <div id="home">
-        <HeroSection />
-      </div>
-      <div id="about">
-        <About />
-      </div>
-      <div id="gallery">
-        <Gallery />
-      </div>
+      <Routes>
+        <Route path="/" element={<><HeroSection /> <About/></>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/gallery" element={<Gallery />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   )
 }
 export default App
