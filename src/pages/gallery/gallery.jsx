@@ -1,17 +1,19 @@
 import React from 'react';
+import back from "../../assets/heroImage/back.jpg";
+import sam from "../../assets/heroImage/sam.jpg";
+import image from "../../assets/heroImage/image.png";
 
 const eventImages = [
-  { id: 1, src: "/image/event1.jpg", alt: "Event 1" },
-  { id: 2, src: "/images/event2.jpg", alt: "Event 2" },
-  { id: 3, src: "/images/event3.jpg", alt: "Event 3" },
-  { id: 4, src: "/images/event4.jpg", alt: "Event 4" },
-  { id: 5, src: "/images/event5.jpg", alt: "Event 5" },
-  { id: 6, src: "/images/event6.jpg", alt: "Event 6" },
+  { id: 1, src: image, alt: "Event 1" },
+  { id: 2, src: sam, alt: "Event 2" },
+  { id: 3, src: sam, alt: "Event 3" },
+  { id: 4, src: back, alt: "Event 4" },
+  { id: 5, src: back, alt: "Event 5" },
+  { id: 6, src: back, alt: "Event 6" },
 ];
 
-const Gallery =() =>{
-
-            return (
+const Gallery = () => {
+  return (
     <section className="bg-[#142746] text-white py-12 px-6">
       <div className="max-w-6xl mx-auto text-center mb-10">
         <h2 className="text-teal-400 uppercase font-semibold">Gallery</h2>
@@ -34,11 +36,8 @@ const Gallery =() =>{
           </div>
         ))}
       </div>
-
-    </section>)
-
-
-           
-}
+    </section>
+  );
+};
 
 export default Gallery;

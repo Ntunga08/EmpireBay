@@ -5,19 +5,21 @@ import About from './pages/about/about'
 import Footer from './components/footer/footer'
 import Gallery from './pages/gallery/gallery'
 
-const App=() =>{
-
+const App = () => {
   return (
     <>
-      <Navbar/> 
-       <HeroSection />
-       <About />
-       <Gallery/>
-       <Footer />
-
-      
+      <Navbar />
+      <div id="home">
+        <HeroSection />
+      </div>
+      <div id="about">
+        <About />
+      </div>
+      <div id="gallery">
+        <Gallery />
+      </div>
+      <Footer />
     </>
   )
 }
-
 export default App
