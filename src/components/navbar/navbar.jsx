@@ -5,18 +5,18 @@ import React from "react";
 const Navbar = () => {
     const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <nav className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <nav className="shadow-md fixed w-full top-0 left-0 z-50">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex bg-[#FAE8B4] justify-between items-center rounded-full  ">
         {/* Logo */}
-        <h1 className="text-2xl font-bold text-blue-900">Empire Bay</h1>
+        <h1 className="text-2xl font-bold text-black">Empire Bay</h1>
 
         {/* Menu Links */}
-        <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
-          <li><a href="/" className="hover:text-blue-600">Home</a></li>
-          <li><a href="/About" className="hover:text-blue-600">About</a></li>
-          <li><a href="#menu" className="hover:text-blue-600">Menu</a></li>
-          <li><a href="/Gallery" className="hover:text-blue-600">Events</a></li>
-          <li><a href="#contact" className="hover:text-blue-600">Contact</a></li>
+        <ul className="hidden md:flex space-x-8 text-black font-medium">
+          <li><a href="/" className="hover:text-green-200">Home</a></li>
+          <li><a href="/About" className="hover:text-white">About</a></li>
+          <li><a href="#menu" className="hover:text-white">Menu</a></li>
+          <li><a href="/Gallery" className="hover:text-white">Events</a></li>
+          <li><a href="#contact" className="hover:text-white">Contact</a></li>
         </ul>
 
         {/* Button */}
