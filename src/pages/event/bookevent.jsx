@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, Users, User, Mail, Phone, CheckCircle } from 'lucide-react';
 
-export default function BarBookingForm() {
+const  BarBookingForm =() =>{
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -102,7 +102,7 @@ export default function BarBookingForm() {
                 guests: 2, tableType: 'regular', specialRequests: ''
               });
             }}
-            className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105"
+            className="w-full bg-[#142746] hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105"
           >
             Make Another Booking
           </button>
@@ -111,7 +111,7 @@ export default function BarBookingForm() {
     );
   }
 return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 py-8 px-4">
+    <div className="min-h-screen bg-[#142746] via-blue-900 to-indigo-900 py-8 px-4">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
@@ -127,7 +127,7 @@ return (
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="flex items-center text-gray-700 font-semibold mb-2">
-                  <User className="w-5 h-5 mr-2 text-purple-600" />
+                  <User className="w-5 h-5 mr-2 text-[#142746]" />
                   Full Name
                 </label>
                 <input
@@ -145,7 +145,7 @@ return (
 
               <div>
                 <label className="flex items-center text-gray-700 font-semibold mb-2">
-                  <Mail className="w-5 h-5 mr-2 text-purple-600" />
+                  <Mail className="w-5 h-5 mr-2 text-[#142746]" />
                   Email Address
                 </label>
                 <input
@@ -164,7 +164,7 @@ return (
 
             <div>
               <label className="flex items-center text-gray-700 font-semibold mb-2">
-                <Phone className="w-5 h-5 mr-2 text-purple-600" />
+                <Phone className="w-5 h-5 mr-2 text-[#142746]" />
                 Phone Number
               </label>
               <input
@@ -184,7 +184,7 @@ return (
             <div className="grid md:grid-cols-3 gap-6">
               <div>
                 <label className="flex items-center text-gray-700 font-semibold mb-2">
-                  <Calendar className="w-5 h-5 mr-2 text-purple-600" />
+                  <Calendar className="w-5 h-5 mr-2 text-[#142746]" />
                   Date
                 </label>
                 <input
@@ -202,7 +202,7 @@ return (
 
               <div>
                 <label className="flex items-center text-gray-700 font-semibold mb-2">
-                  <Clock className="w-5 h-5 mr-2 text-purple-600" />
+                  <Clock className="w-5 h-5 mr-2 text-[#142746]" />
                   Time
                 </label>
                 <select
@@ -223,7 +223,7 @@ return (
 
               <div>
                 <label className="flex items-center text-gray-700 font-semibold mb-2">
-                  <Users className="w-5 h-5 mr-2 text-purple-600" />
+                  <Users className="w-5 h-5 mr-2 text-[#142746]" />
                   Guests
                 </label>
                 <select
@@ -284,7 +284,7 @@ return (
             <button
               type="button"
               onClick={handleSubmit}
-              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+              className="w-full bg-[#142746] hover:from-purple-700 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
             >
               Reserve Table
             </button>
@@ -293,9 +293,11 @@ return (
 
         {/* Footer */}
         <div className="text-center mt-8 text-blue-200">
-          <p>Questions? Call us at (555) 123-4567</p>
+          <p>Questions? Call us at (255)74-145-9567</p>
         </div>
       </div>
     </div>
   );
 }
+
+export default BarBookingForm;
