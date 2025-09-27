@@ -4,7 +4,7 @@ import sam1 from "../../assets/heroImage/sam1.jpeg"
 
 const About = () => {
   return (
-    <section id="about" className="py-16 bg-gray-100 text-gray-900">
+    <section id="about" className="py-16 bg-gray-100 text-gyray-900">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-16">
 
         {/* Heading */}

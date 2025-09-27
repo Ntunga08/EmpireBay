@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link} from "react-router-dom"
 import back from "../../assets/heroImage/back.jpg";
 import sam from "../../assets/heroImage/sam.jpg";
 import image from "../../assets/heroImage/image.png";
@@ -72,14 +73,13 @@ const HeroSection = () => {
 
               {/* Buttons */}
               <div className="flex justify-center gap-4">
-                <a
-                  href="#reserve"
-                  className="bg-[#142746] text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-700 hover:scale-105 transition transform duration-300"
-                >
+                <Link
+                    to="/booking"
+                   className="bg-[#142746] text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-700 hover:scale-105 transition transform duration-300"
+                    >
                   Book a Table
-                </a>
-                <a
-                  href="#events"
+                </Link>
+                 <a href="#events"
                   className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black hover:scale-105 transition transform duration-300"
                 >
                   Check Events
