@@ -70,4 +70,43 @@ export default function BarBookingForm() {
       console.log('Booking submitted:', formData);
     }
   };
-  
+
+
+  if (isSubmitted) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4">
+        <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full text-center">
+          <div className="mb-6">
+            <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-4" />
+            <h2 className="text-3xl font-bold text-gray-800 mb-2">Booking Confirmed!</h2>
+            <p className="text-gray-600">
+              Thank you, {formData.name}! Your table reservation has been confirmed.
+            </p>
+          </div>
+          
+          <div className="bg-gray-50 rounded-xl p-6 mb-6 text-left">
+            <h3 className="font-semibold text-gray-800 mb-3">Reservation Details:</h3>
+            <div className="space-y-2 text-sm text-gray-600">
+              <p><span className="font-medium">Date:</span> {new Date(formData.date).toLocaleDateString()}</p>
+              <p><span className="font-medium">Time:</span> {formData.time}</p>
+              <p><span className="font-medium">Guests:</span> {formData.guests}</p>
+              <p><span className="font-medium">Table:</span> {tableTypes.find(t => t.value === formData.tableType)?.label}</p>
+            </div>
+          </div>
+
+          <button
+            onClick={() => {
+              setIsSubmitted(false);
+              setFormData({
+                name: '', email: '', phone: '', date: '', time: '',
+                guests: 2, tableType: 'regular', specialRequests: ''
+              });
+            }}
+            className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105"
+          >
+            Make Another Booking
+          </button>
+        </div>
+      </div>
+    );
+  }
