@@ -73,12 +73,12 @@ const HeroSection = () => {
 
               {/* Buttons */}
               <div className="flex justify-center gap-4">
-                <Link
-                    to="/booking"
-                   className="bg-[#142746] text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-700 hover:scale-105 transition transform duration-300"
-                    >
-                  Book a Table
-                </Link>
+               <Link
+                to="/booking"
+               className="bg-[#142746] text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-700 hover:scale-105 transition transform duration-300"
+                >
+                   Book a Table
+                 </Link>
                  <a href="#events"
                   className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-black hover:scale-105 transition transform duration-300"
                 >

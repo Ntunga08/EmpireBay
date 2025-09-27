@@ -4,19 +4,39 @@ import HeroSection from './pages/home/home'
 import About from './pages/about/about'
 import Footer from './components/footer/footer'
 import Gallery from './pages/gallery/gallery'
-import BarBookingForm from './pages/event/bookevent'
+import BarBookingForm from './pages/event/booking'
 
 const App = () => {
   return (
     <Router>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<><HeroSection /> <About/></>} />
-        <Route path="/about" element={<><About /> <BarBookingForm/></>} />
-        <Route path="/gallery" element={<Gallery />} />
+        {/* Routes with Nav and Footer */}
+        <Route path="/" element={
+          <>
+            <Navbar />
+            <HeroSection />
+            <About />
+            <Footer />
+          </>
+        } />
+        <Route path="/about" element={
+          <>
+            <Navbar />
+            <About />
+            <Footer />
+          </>
+        } />
+        <Route path="/gallery" element={
+          <>
+            <Gallery />
+          </>
+        } />
+        
+        {/* Booking route without Nav and Footer */}
+        <Route path="/booking" element={<BarBookingForm />} />
       </Routes>
-      <Footer />
     </Router>
-  )
-}
-export default App
+  );
+};
+
+export default App;

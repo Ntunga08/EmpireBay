@@ -1,4 +1,7 @@
 import React from 'react';
+import { ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 import back from "../../assets/heroImage/back.jpg";
 import sam from "../../assets/heroImage/sam.jpg";
 import image from "../../assets/heroImage/image.png";
@@ -23,6 +26,18 @@ const Gallery = () => {
   return (
     <section className="bg-[#142746] text-white py-12 px-6">
       <div className="max-w-3xl mx-auto text-center mb-10">
+
+
+                   <div className="fixed top-4 left-4 z-50">
+  <Link 
+    to="/" 
+    className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-lg hover:bg-white/30 transition-colors"
+  >
+    <ArrowLeft className="w-4 h-4 mr-2" />
+    Back to Home
+  </Link>
+</div>
+        
         <h2 className="text-teal-400 uppercase font-semibold">Gallery</h2>
         <h3 className="text-3xl md:text-4xl font-bold mt-2">
           Take a glimpse into our unforgettable events
