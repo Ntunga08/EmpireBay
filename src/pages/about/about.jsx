@@ -1,5 +1,6 @@
 import React from "react";
 import image from "../../assets/heroImage/image.png";
+import sam1 from "../../assets/heroImage/sam1.jpeg"
 
 const About = () => {
   return (
@@ -21,13 +22,13 @@ const About = () => {
           <div className="text-center space-y-6">
             <div className="relative overflow-hidden rounded-2xl shadow-lg">
               <img 
-                src={image} 
+                src={sam1} 
                 alt="Empire Bay Vision" 
                 className="w-full h-64 object-cover"
               />
-              <div className="absolute inset-0 bg-blue-900 bg-opacity-20"></div>
+              <div className="bg-blue-900 bg-opacity-20"></div>
             </div>
-            <button className="bg-blue-400 hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition-colors">
+            <button className="bg-[#142720] hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition-colors">
               Ask More
             </button>
             <div className="space-y-3">
@@ -50,9 +51,9 @@ const About = () => {
                 alt="Empire Bay Mission" 
                 className="w-full h-64 object-cover"
               />
-              <div className="absolute inset-0 bg-blue-900 bg-opacity-20"></div>
+              <div className="absolute  bg-blue-900 bg-opacity-20"></div>
             </div>
-            <button className="bg-blue-400 hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition-colors">
+            <button className="bg-[#142720] hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition-colors">
               Ask More
             </button>
             <div className="space-y-3">
@@ -75,9 +76,9 @@ const About = () => {
                 alt="Empire Bay Values" 
                 className="w-full h-64 object-cover"
               />
-              <div className="absolute inset-0 bg-blue-900 bg-opacity-20"></div>
+              <div className="absolute bg-blue-900 bg-opacity-20"></div>
             </div>
-            <button className="bg-blue-400 hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition-colors">
+            <button className="bg-[#142720] hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition-colors">
               Ask More
             </button>
             <div className="space-y-3">
@@ -125,7 +126,7 @@ const About = () => {
         </div>
 
         {/* What Sets Us Apart */}
-        <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white p-12 rounded-2xl shadow-lg">
+        <div className="bg-gradient-to-r  from-[#142746] to-[#142720] text-white p-12 rounded-2xl shadow-lg">
           <h3 className="text-4xl font-bold mb-8 text-center">What Sets Us Apart</h3>
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center space-y-3">

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import back from "../../assets/heroImage/back.jpg";
 import sam from "../../assets/heroImage/sam.jpg";
 import image from "../../assets/heroImage/image.png";
+import sam1 from "../../assets/heroImage/sam1.jpeg"
 
 const slides = [
   {
@@ -15,6 +16,10 @@ const slides = [
   },
   {
     image: image,
+    message: "Relax, Refresh, and Reconnect",
+  },
+   {
+    image: sam1,
     message: "Relax, Refresh, and Reconnect",
   },
 ];
@@ -69,7 +74,7 @@ const HeroSection = () => {
               <div className="flex justify-center gap-4">
                 <a
                   href="#reserve"
-                  className="bg-blue-900 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-700 hover:scale-105 transition transform duration-300"
+                  className="bg-[#142746] text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-700 hover:scale-105 transition transform duration-300"
                 >
                   Book a Table
                 </a>

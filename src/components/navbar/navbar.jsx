@@ -6,12 +6,12 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = React.useState(false);
   return (
     <nav className="shadow-md fixed w-full top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-3 flex bg-[#FAE8B4] justify-between items-center rounded-full  ">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex bg-[#142746] justify-between items-center rounded-full  ">
         {/* Logo */}
-        <h1 className="text-2xl font-bold text-black">Empire Bay</h1>
+        <h1 className="text-2xl font-bold text-white">Empire Bay</h1>
 
         {/* Menu Links */}
-        <ul className="hidden md:flex space-x-8 text-black font-medium">
+        <ul className="hidden md:flex space-x-8 text-white font-medium">
           <li><a href="/" className="hover:text-green-200">Home</a></li>
           <li><a href="/About" className="hover:text-white">About</a></li>
           <li><a href="#menu" className="hover:text-white">Menu</a></li>
