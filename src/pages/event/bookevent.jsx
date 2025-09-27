@@ -110,3 +110,192 @@ export default function BarBookingForm() {
       </div>
     );
   }
+return (
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 py-8 px-4">
+      <div className="max-w-2xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h1 className="text-5xl font-bold text-white mb-4">Reserve Your Table</h1>
+          <p className="text-xl text-blue-200">Book the perfect spot for your evening</p>
+        </div>
+
+        {/* Form Container */}
+        <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8">
+          <div className="space-y-6">
+            
+            {/* Personal Information */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label className="flex items-center text-gray-700 font-semibold mb-2">
+                  <User className="w-5 h-5 mr-2 text-purple-600" />
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition-colors ${
+                    errors.name ? 'border-red-400 focus:border-red-500' : 'border-gray-200 focus:border-purple-500'
+                  }`}
+                  placeholder="Enter your full name"
+                />
+                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+              </div>
+
+              <div>
+                <label className="flex items-center text-gray-700 font-semibold mb-2">
+                  <Mail className="w-5 h-5 mr-2 text-purple-600" />
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition-colors ${
+                    errors.email ? 'border-red-400 focus:border-red-500' : 'border-gray-200 focus:border-purple-500'
+                  }`}
+                  placeholder="your.email@example.com"
+                />
+                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+              </div>
+            </div>
+
+            <div>
+              <label className="flex items-center text-gray-700 font-semibold mb-2">
+                <Phone className="w-5 h-5 mr-2 text-purple-600" />
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition-colors ${
+                  errors.phone ? 'border-red-400 focus:border-red-500' : 'border-gray-200 focus:border-purple-500'
+                }`}
+                placeholder="+1 (555) 123-4567"
+              />
+              {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+            </div>
+
+            {/* Reservation Details */}
+            <div className="grid md:grid-cols-3 gap-6">
+              <div>
+                <label className="flex items-center text-gray-700 font-semibold mb-2">
+                  <Calendar className="w-5 h-5 mr-2 text-purple-600" />
+                  Date
+                </label>
+                <input
+                  type="date"
+                  name="date"
+                  value={formData.date}
+                  onChange={handleInputChange}
+                  min={new Date().toISOString().split('T')[0]}
+                  className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition-colors ${
+                    errors.date ? 'border-red-400 focus:border-red-500' : 'border-gray-200 focus:border-purple-500'
+                  }`}
+                />
+                {errors.date && <p className="text-red-500 text-sm mt-1">{errors.date}</p>}
+              </div>
+
+              <div>
+                <label className="flex items-center text-gray-700 font-semibold mb-2">
+                  <Clock className="w-5 h-5 mr-2 text-purple-600" />
+                  Time
+                </label>
+                <select
+                  name="time"
+                  value={formData.time}
+                  onChange={handleInputChange}
+                  className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition-colors ${
+                    errors.time ? 'border-red-400 focus:border-red-500' : 'border-gray-200 focus:border-purple-500'
+                  }`}
+                >
+                  <option value="">Select time</option>
+                  {timeSlots.map(time => (
+                    <option key={time} value={time}>{time}</option>
+                  ))}
+                </select>
+                {errors.time && <p className="text-red-500 text-sm mt-1">{errors.time}</p>}
+              </div>
+
+              <div>
+                <label className="flex items-center text-gray-700 font-semibold mb-2">
+                  <Users className="w-5 h-5 mr-2 text-purple-600" />
+                  Guests
+                </label>
+                <select
+                  name="guests"
+                  value={formData.guests}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 transition-colors"
+                >
+                  {[...Array(12)].map((_, i) => (
+                    <option key={i + 1} value={i + 1}>{i + 1} {i === 0 ? 'guest' : 'guests'}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Table Type */}
+            <div>
+              <label className="text-gray-700 font-semibold mb-4 block">Table Type</label>
+              <div className="grid md:grid-cols-2 gap-4">
+                {tableTypes.map(table => (
+                  <label
+                    key={table.value}
+                    className={`relative cursor-pointer p-4 border-2 rounded-xl transition-all hover:shadow-md ${
+                      formData.tableType === table.value 
+                        ? 'border-purple-500 bg-purple-50' 
+                        : 'border-gray-200 hover:border-purple-300'
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="tableType"
+                      value={table.value}
+                      checked={formData.tableType === table.value}
+                      onChange={handleInputChange}
+                      className="sr-only"
+                    />
+                    <div className="font-medium text-gray-800">{table.label}</div>
+                    <div className="text-sm text-gray-600 mt-1">{table.price}</div>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Special Requests */}
+            <div>
+              <label className="text-gray-700 font-semibold mb-2 block">Special Requests</label>
+              <textarea
+                name="specialRequests"
+                value={formData.specialRequests}
+                onChange={handleInputChange}
+                rows={4}
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 transition-colors resize-none"
+                placeholder="Any special requests or dietary restrictions..."
+              />
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+            >
+              Reserve Table
+            </button>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="text-center mt-8 text-blue-200">
+          <p>Questions? Call us at (555) 123-4567</p>
+        </div>
+      </div>
+    </div>
+  );
+}
