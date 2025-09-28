@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, Users, User, Mail, Phone, CheckCircle } from 'lucide-react';
+import sam1 from "../../assets/heroImage/sam1.jpeg"
 
 const  BarBookingForm =() =>{
   const [formData, setFormData] = useState({
@@ -111,7 +112,10 @@ const  BarBookingForm =() =>{
     );
   }
 return (
-    <div className="min-h-screen bg-[#142746] via-blue-900 to-indigo-900 py-8 px-4">
+    <div
+  style={{ backgroundImage: `url(${sam1})` }}
+  className="min-h-screen bg-cover bg-center w-full py-8 px-4"
+>
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
