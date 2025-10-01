@@ -19,10 +19,10 @@ const Navbar = () => {
           <li className="relative group">
             <span className="hover:text-white cursor-pointer">Events</span>
             <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block bg-white text-gray-800 rounded-lg shadow-lg w-56 py-2">
-              <Link to="/gallery" className="block px-4 py-2 hover:bg-gray-100">Gallery</Link>
-              <Link to="/events/coming" className="block px-4 py-2 hover:bg-gray-100">Coming Events</Link>
-              <Link to="/events/past" className="block px-4 py-2 hover:bg-gray-100">Past Events</Link>
-              <Link to="/" className="block px-4 py-2 hover:bg-gray-100">Bar View</Link>
+              <Link to="/gallery#top" className="block px-4 py-2 hover:bg-gray-100">Gallery</Link>
+              <Link to="/events/coming#filters" className="block px-4 py-2 hover:bg-gray-100">Coming Events</Link>
+              <Link to="/events/past#top" className="block px-4 py-2 hover:bg-gray-100">Past Events</Link>
+              <Link to="/#top" className="block px-4 py-2 hover:bg-gray-100">Bar View</Link>
             </div>
           </li>
           <li><a href="#contact" className="hover:text-cyan-200">Contact</a></li>

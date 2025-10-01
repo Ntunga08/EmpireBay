@@ -8,7 +8,7 @@ export default function PastEvents() {
   ];
 
   return (
-    <div className="min-h-screen bg-orange-50 px-6 py-10">
+    <div className="min-h-screen bg-orange-50 px-6 py-10" id="top">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800">Past Events</h1>
         <p className="text-gray-600 mt-2">Highlights from our recent beach bar happenings.</p>

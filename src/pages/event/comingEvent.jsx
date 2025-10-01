@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Calendar, Clock, MapPin, Users } from 'lucide-react';
 
 // Hero Banner Component
@@ -23,7 +24,7 @@ const HeroBanner = () => {
 // Filter Bar Component
 const FilterBar = ({ category, onCategoryChange, startDate, endDate, onStartDate, onEndDate, categories }) => {
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-sm p-4 md:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div id="filters" className="bg-white/80 backdrop-blur-sm rounded-xl shadow-sm p-4 md:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <div className="col-span-1">
         <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
         <select
@@ -65,8 +66,9 @@ const FilterBar = ({ category, onCategoryChange, startDate, endDate, onStartDate
 const EventCard = ({ event }) => {
   const formatDate = (dateStr) => new Date(dateStr).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   return (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow overflow-hidden">
-      <div className="p-5">
+    <Link to={`/events/coming#event-${event.id}`} className="block focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-2xl" id={`event-${event.id}`}>
+      <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow overflow-hidden">
+        <div className="p-5">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-lg md:text-xl font-bold text-gray-800">{event.title}</h3>
           <div className="text-2xl" aria-hidden>{event.image}</div>
@@ -80,10 +82,11 @@ const EventCard = ({ event }) => {
         </div>
         <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between">
           <span className="text-base md:text-lg font-bold text-cyan-700">{event.price}</span>
-          <button className="px-4 py-2 rounded-full bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold">Details</button>
+          <span className="px-4 py-2 rounded-full bg-orange-500 text-white text-sm font-semibold">Details</span>
+        </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

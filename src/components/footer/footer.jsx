@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-cyan-700 to-cyan-800 text-white py-12">
+    <footer className="bg-gradient-to-r from-cyan-700 to-cyan-800 text-white py-6">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid md:grid-cols-3 gap-4 mb-4">
           
           {/* Company Info */}
           <div className="space-y-4">
@@ -41,35 +41,35 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><Link to="/" className="text-cyan-100 hover:text-white transition">Home</Link></li>
-              <li><Link to="/about" className="text-cyan-100 hover:text-white transition">About Us</Link></li>
-              <li><Link to="/events/coming" className="text-cyan-100 hover:text-white transition">Events</Link></li>
-              <li><a href="#menu" className="text-cyan-100 hover:text-white transition">Menu</a></li>
-              <li><Link to="/gallery" className="text-cyan-100 hover:text-white transition">Gallery</Link></li>
-              <li><a href="#contact" className="text-cyan-100 hover:text-white transition">Contact</a></li>
+          <div className="space-y-3">
+            <h4 className="text-base font-semibold text-white">Quick Links</h4>
+            <ul className="space-y-1.5">
+              <li><Link to="/" className="text-cyan-100 hover:text-white transition text-sm">Home</Link></li>
+              <li><Link to="/about" className="text-cyan-100 hover:text-white transition text-sm">About Us</Link></li>
+              <li><Link to="/events/coming" className="text-cyan-100 hover:text-white transition text-sm">Events</Link></li>
+              <li><a href="#menu" className="text-cyan-100 hover:text-white transition text-sm">Menu</a></li>
+              <li><Link to="/gallery" className="text-cyan-100 hover:text-white transition text-sm">Gallery</Link></li>
+              <li><a href="#contact" className="text-cyan-100 hover:text-white transition text-sm">Contact</a></li>
             </ul>
           </div>
 
           {/* Services */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">What We Offer</h4>
-            <ul className="space-y-2">
-              <li><span className="text-cyan-100">Live Music Events</span></li>
-              <li><span className="text-cyan-100">Premium Beers</span></li>
-              <li><span className="text-cyan-100">Signature Cocktails</span></li>
-              <li><span className="text-cyan-100">Sports Viewing</span></li>
-              <li><span className="text-cyan-100">Karaoke Nights</span></li>
-              <li><span className="text-cyan-100">Private Events</span></li>
+          <div className="space-y-3">
+            <h4 className="text-base font-semibold text-white">What We Offer</h4>
+            <ul className="space-y-1.5">
+              <li><span className="text-cyan-100 text-sm">Live Music Events</span></li>
+              <li><span className="text-cyan-100 text-sm">Premium Beers</span></li>
+              <li><span className="text-cyan-100 text-sm">Signature Cocktails</span></li>
+              <li><span className="text-cyan-100 text-sm">Sports Viewing</span></li>
+              <li><span className="text-cyan-100 text-sm">Karaoke Nights</span></li>
+              <li><span className="text-cyan-100 text-sm">Private Events</span></li>
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Contact Info</h4>
-            <div className="space-y-3 text-cyan-100">
+          <div className="space-y-3">
+            <h4 className="text-base font-semibold text-white">Contact Info</h4>
+            <div className="space-y-2 text-cyan-100 text-sm">
               <div className="flex items-start space-x-3">
                 <svg className="w-5 h-5 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
@@ -93,46 +93,19 @@ const Footer = () => {
 
         </div>
 
-        {/* Opening Hours */}
-        <div className="border-t border-cyan-600 pt-8 mb-8">
-          <div className="text-center">
-            <h4 className="text-lg font-semibold text-white mb-4">Opening Hours</h4>
-            <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto text-blue-200">
-              <div>
-                <span className="font-medium">Monday - Thursday:</span> 5:00 PM - 12:00 AM
-              </div>
-              <div>
-                <span className="font-medium">Friday - Sunday:</span> 4:00 PM - 2:00 AM
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Opening Hours (compact hidden) */}
+        <div className="hidden"></div>
 
-        {/* Newsletter Signup */}
-        <div className="border-t border-cyan-600 pt-8 mb-8">
-          <div className="text-center space-y-4">
-            <h4 className="text-lg font-semibold text-white">Stay Updated</h4>
-            <p className="text-blue-200">Subscribe to get updates on upcoming events and special offers</p>
-            <div className="flex max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="flex-1 px-4 py-2 rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-              <button className="bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded-r-lg transition">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
+        {/* Newsletter (compact hidden) */}
+        <div className="hidden"></div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-cyan-600 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-cyan-100 text-sm">
+        <div className="border-t border-cyan-600 pt-4">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
+            <div className="text-cyan-100 text-xs">
               © 2025 Empire Bay. All rights reserved.
             </div>
-            <div className="flex space-x-6 text-sm">
+            <div className="flex space-x-4 text-xs">
               <a href="#" className="text-cyan-100 hover:text-white transition">Privacy Policy</a>
               <a href="#" className="text-cyan-100 hover:text-white transition">Terms of Service</a>
               <a href="#" className="text-cyan-100 hover:text-white transition">Cookie Policy</a>
