@@ -34,7 +34,7 @@ const  BarBookingForm =() =>{
     
     if (!formData.name.trim()) newErrors.name = 'Name is required';
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.emailm = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Email is invalid';
     }
@@ -115,7 +115,7 @@ return (
     <div
   style={{ backgroundImage: `url(${sam1})` }}
   className="min-h-screen bg-cover bg-center w-full py-8 px-4"
->
+> 
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">

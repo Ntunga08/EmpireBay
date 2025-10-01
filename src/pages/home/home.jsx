@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import back from "../../assets/heroImage/back.jpg";
 import sam from "../../assets/heroImage/sam.jpg";
 import image from "../../assets/heroImage/image.png";
 import sam1 from "../../assets/heroImage/sam1.jpeg"
 
-const slides = [
+const defaultSlides = [
   {
     image: back,
     message: "Welcome to Empire Bay - Feel the Vibe",
@@ -25,16 +25,15 @@ const slides = [
   },
 ];
 
-const HeroSection = () => {
+const HeroSection = ({ slides = defaultSlides, autoAdvanceMs = 5000 }) => {
   const [current, setCurrent] = useState(0);
 
-  // Auto slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, autoAdvanceMs);
     return () => clearInterval(interval);
-  }, []);
+  }, [slides.length, autoAdvanceMs]);
 
   return (
     <section

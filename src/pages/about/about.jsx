@@ -1,10 +1,11 @@
 import React from "react";
+import Button from "../../components/button/button";
 import image from "../../assets/heroImage/image.png";
 import sam1 from "../../assets/heroImage/sam1.jpeg"
 
 const About = () => {
   return (
-    <section id="about" className="py-16 bg-gray-100 text-gyray-900">
+    <section id="about" className="py-16 bg-gray-100 text-gray-900">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-16">
 
         {/* Heading */}
@@ -28,9 +29,7 @@ const About = () => {
               />
               <div className="bg-blue-900 bg-opacity-20"></div>
             </div>
-            <button className="bg-[#142720] hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition-colors">
-              Ask More
-            </button>
+            <Button className="bg-[#142720] hover:bg-blue-500">Ask More</Button>
             <div className="space-y-3">
               <h3 className="text-2xl font-bold text-gray-700 uppercase tracking-wide">
                 OUR VISION
@@ -53,9 +52,7 @@ const About = () => {
               />
               <div className="absolute  bg-blue-900 bg-opacity-20"></div>
             </div>
-            <button className="bg-[#142720] hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition-colors">
-              Ask More
-            </button>
+            <Button className="bg-[#142720] hover:bg-blue-500">Ask More</Button>
             <div className="space-y-3">
               <h3 className="text-2xl font-bold text-gray-700 uppercase tracking-wide">
                 MISSION STATEMENT
@@ -78,9 +75,7 @@ const About = () => {
               />
               <div className="absolute bg-blue-900 bg-opacity-20"></div>
             </div>
-            <button className="bg-[#142720] hover:bg-blue-500 text-white px-6 py-2 rounded-lg transition-colors">
-              Ask More
-            </button>
+            <Button className="bg-[#142720] hover:bg-blue-500">Ask More</Button>
             <div className="space-y-3">
               <h3 className="text-2xl font-bold text-gray-700 uppercase tracking-wide">
                 CORE VALUES
