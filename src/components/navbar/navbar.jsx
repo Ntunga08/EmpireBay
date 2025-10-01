@@ -22,6 +22,7 @@ const Navbar = () => {
               <Link to="/gallery" className="block px-4 py-2 hover:bg-gray-100">Gallery</Link>
               <Link to="/events/coming" className="block px-4 py-2 hover:bg-gray-100">Coming Events</Link>
               <Link to="/events/past" className="block px-4 py-2 hover:bg-gray-100">Past Events</Link>
+              <Link to="/" className="block px-4 py-2 hover:bg-gray-100">Bar View</Link>
             </div>
           </li>
           <li><a href="#contact" className="hover:text-white">Contact</a></li>
@@ -51,6 +52,7 @@ const Navbar = () => {
                 <Link to="/gallery" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>Gallery</Link>
                 <Link to="/events/coming" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>Coming Events</Link>
                 <Link to="/events/past" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>Past Events</Link>
+                <Link to="/" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>Bar View</Link>
               </div>
             </li>
             <li><a href="#contact" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>Contact</a></li>

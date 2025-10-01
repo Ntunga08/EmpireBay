@@ -6,16 +6,14 @@ import Gallery from './pages/gallery/gallery'
 import BarBookingForm from './pages/event/booking'
 import ComingEvent from './pages/event/comingEvent'
 import PastEvent from './pages/event/pastevent'
+import BarView from './pages/home/barView'
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route element={<AppLayout />}>
-          <Route index element={<>
-            <HeroSection />
-            <About />
-          </>} />
+          <Route index element={<BarView />} />
           <Route path="about" element={<About />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="events/coming" element={<ComingEvent />} />
