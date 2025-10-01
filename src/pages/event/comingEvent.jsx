@@ -1,6 +1,7 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, MapPin, Users } from 'lucide-react';
+import { api } from '../../utils/api';
 
 // Hero Banner Component
 const HeroBanner = () => {
@@ -114,6 +115,9 @@ export default function ComingEvents() {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [page, setPage] = useState(1);
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const categories = [
     { id: 'all', name: 'All' },
@@ -123,23 +127,36 @@ export default function ComingEvents() {
     { id: 'games', name: 'Beach Games' },
   ];
 
-  const events = [
-    { id: 1, title: 'Sunset DJ Party', date: '2025-10-18', time: '18:00', category: 'dj', location: 'Sunset Deck', capacity: 150, price: '$20', image: '🎧', description: 'Dance into the golden hour with tropical house and chill beats.' },
-    { id: 2, title: 'Full Moon Bonfire', date: '2025-10-25', time: '20:00', category: 'bonfire', location: 'North Beach', capacity: 100, price: 'Free', image: '🔥', description: 'Acoustic guitars, marshmallows, and moonlit waves.' },
-    { id: 3, title: 'Tropical Cocktail Night', date: '2025-10-28', time: '19:00', category: 'live', location: 'Main Stage', capacity: 200, price: '$25', image: '🍹', description: 'Live island band and signature cocktails all night.' },
-    { id: 4, title: 'Beach Volleyball League', date: '2025-11-02', time: '16:00', category: 'games', location: 'South Courts', capacity: 80, price: '$10', image: '🏐', description: 'Join or cheer! Teams compete in friendly beach matches.' },
-    { id: 5, title: 'Reggae on the Shore', date: '2025-11-08', time: '19:30', category: 'live', location: 'Palm Grove', capacity: 220, price: '$30', image: '🎶', description: 'Roots reggae vibes with ocean breezes and island snacks.' },
-    { id: 6, title: 'Fire Dance Showcase', date: '2025-11-15', time: '20:00', category: 'bonfire', location: 'Tiki Circle', capacity: 120, price: '$18', image: '🔥', description: 'Mesmerizing fire performances and rhythmic drums.' },
-    { id: 7, title: 'Sandy Sprints & Games', date: '2025-11-22', time: '15:00', category: 'games', location: 'Open Beach', capacity: 90, price: '$8', image: '🏃‍♂️', description: 'Beach races, tug-of-war, and fun challenges for all ages.' },
-    { id: 8, title: 'Coral Beats DJ Night', date: '2025-11-29', time: '21:00', category: 'dj', location: 'Reef Bar', capacity: 180, price: '$22', image: '🎛️', description: 'High-energy DJ set with coral/cyan visuals and lights.' },
-  ];
+  useEffect(() => {
+    const load = async () => {
+      try {
+        setLoading(true);
+        setError('');
+        const params = {
+          page,
+          size: 12,
+          ...(category !== 'all' ? { category } : {}),
+          ...(startDate ? { start_date: startDate } : {}),
+          ...(endDate ? { end_date: endDate } : {}),
+          status: 'upcoming',
+        };
+        const data = await api.getEvents(params);
+        setEvents(data || []);
+      } catch (e) {
+        setError('Failed to load events');
+      } finally {
+        setLoading(false);
+      }
+    };
+    load();
+  }, [category, startDate, endDate, page]);
 
   const filtered = useMemo(() => {
     const byCategory = category === 'all' ? events : events.filter(e => e.category === category);
     const byStart = startDate ? byCategory.filter(e => new Date(e.date) >= new Date(startDate)) : byCategory;
     const byEnd = endDate ? byStart.filter(e => new Date(e.date) <= new Date(endDate)) : byStart;
     return byEnd;
-  }, [category, startDate, endDate]);
+  }, [events, category, startDate, endDate]);
 
   const pageSize = 6;
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));

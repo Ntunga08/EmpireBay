@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { api } from "../../utils/api";
 
 // Placeholder data (replace with backend later)
 const eventsData = [
-  { id: 1, title: "Sunset DJ Party", date: "2025-10-18", description: "Dance into the golden hour with tropical house.", image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" },
-  { id: 2, title: "Full Moon Bonfire", date: "2025-10-25", description: "Acoustic guitars and moonlit waves.", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" },
-  { id: 3, title: "Tropical Cocktail Night", date: "2025-10-28", description: "Island band and signature cocktails.", image: "https://images.unsplash.com/photo-1514362545857-3bc16d3b27f3?q=80&w=1200&auto=format&fit=crop" }
+  { id: 1, title: "Sunset DJ Party", date: "2025-10-18", description: "Dance into the golden hour with tropical house.", image: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=1600&auto=format&fit=crop" },
+  { id: 2, title: "Full Moon Bonfire", date: "2025-10-25", description: "Acoustic guitars and moonlit waves.", image: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1600&auto=format&fit=crop" },
+  { id: 3, title: "Tropical Cocktail Night", date: "2025-10-28", description: "Island band and signature cocktails.", image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1600&auto=format&fit=crop" }
 ];
 
 const menuItems = [
-  { id: 1, name: "Coral Crush", type: "Cocktail", image: "https://images.unsplash.com/photo-1551024709-8f23befc6cf7?q=80&w=1200&auto=format&fit=crop" },
-  { id: 2, name: "Aqua Breeze", type: "Cocktail", image: "https://images.unsplash.com/photo-1567443024551-f3e3cc2be870?q=80&w=1200&auto=format&fit=crop" },
-  { id: 3, name: "Island Platter", type: "Cuisine", image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1200&auto=format&fit=crop" },
-  { id: 4, name: "Sunset Salsa", type: "Cuisine", image: "https://images.unsplash.com/photo-1490474504059-bf2db5ab2348?q=80&w=1200&auto=format&fit=crop" }
+  { id: 1, name: "Coral Crush", type: "Cocktail", image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=1400&auto=format&fit=crop" },
+  { id: 2, name: "Aqua Breeze", type: "Cocktail", image: "https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1400&auto=format&fit=crop" },
+  { id: 3, name: "Island Platter", type: "Cuisine", image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1400&auto=format&fit=crop" },
+  { id: 4, name: "Sunset Salsa", type: "Cuisine", image: "https://images.unsplash.com/photo-1529042410759-befb1204b468?q=80&w=1400&auto=format&fit=crop" }
 ];
 
 const hours = [
@@ -21,7 +22,7 @@ const hours = [
 ];
 
 const HeroBanner = () => {
-  const bgUrl = "https://images.unsplash.com/photo-1470167290877-7d5d3446de4c?q=80&w=2000&auto=format&fit=crop";
+  const bgUrl = "https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=2000&auto=format&fit=crop";
   return (
     <section
       className="relative w-full h-[70vh] min-h-[420px] bg-center bg-cover"
@@ -51,9 +52,9 @@ const AboutSection = () => {
           <p className="mt-3 text-gray-600">At Empire Bay, sunsets meet soundtracks. Enjoy signature cocktails, live beats, and bonfires—right by the ocean. Your perfect night starts here.</p>
         </div>
         <div className="grid grid-cols-2 gap-4">
-          <img className="rounded-xl shadow" src="https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?q=80&w=1200&auto=format&fit=crop" alt="Cocktail" />
-          <img className="rounded-xl shadow" src="https://images.unsplash.com/photo-1501973801540-537f08ccae7b?q=80&w=1200&auto=format&fit=crop" alt="Palms" />
-          <img className="rounded-xl shadow col-span-2" src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?q=80&w=1600&auto=format&fit=crop" alt="Waves" />
+          <img className="rounded-xl shadow" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1200&auto=format&fit=crop" alt="Cocktail" />
+          <img className="rounded-xl shadow" src="https://images.unsplash.com/photo-1485217988980-11786ced9454?q=80&w=1200&auto=format&fit=crop" alt="Palms" />
+          <img className="rounded-xl shadow col-span-2" src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1600&auto=format&fit=crop" alt="Bonfire on beach" />
         </div>
       </div>
     </section>
@@ -86,6 +87,8 @@ const FeaturesSection = () => {
 };
 
 const EventsPreview = () => {
+  const [events, setEvents] = useState([]);
+  useEffect(() => { api.getUpcomingEvents(3).then(setEvents).catch(() => setEvents([])); }, []);
   return (
     <section className="bg-orange-50">
       <div className="max-w-7xl mx-auto px-6 py-12">
@@ -94,9 +97,9 @@ const EventsPreview = () => {
           <Link to="/events/coming" className="text-cyan-700 font-semibold hover:underline">View All Events</Link>
         </div>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {eventsData.map((e) => (
+          {events.map((e) => (
             <div key={e.id} className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-              <img src={e.image} alt={e.title} className="h-40 w-full object-cover" />
+              <img src={e.image_url || "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1600&auto=format&fit=crop"} alt={e.title} className="h-40 w-full object-cover" />
               <div className="p-5">
                 <div className="text-sm text-gray-500">{new Date(e.date).toLocaleDateString()}</div>
                 <h3 className="mt-1 text-lg font-semibold text-gray-800">{e.title}</h3>
@@ -111,6 +114,8 @@ const EventsPreview = () => {
 };
 
 const SpecialsTeaser = () => {
+  const [menu, setMenu] = useState([]);
+  useEffect(() => { api.getFeaturedMenu(4).then(setMenu).catch(() => setMenu([])); }, []);
   return (
     <section className="bg-white">
       <div className="max-w-7xl mx-auto px-6 py-12">
@@ -119,9 +124,9 @@ const SpecialsTeaser = () => {
           <a href="#menu" className="text-cyan-700 font-semibold hover:underline">View Full Menu</a>
         </div>
         <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {menuItems.map((m) => (
+          {menu.map((m) => (
             <div key={m.id} className="bg-orange-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
-              <img src={m.image} alt={m.name} className="h-32 w-full object-cover" />
+              <img src={m.image_url || "https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=1400&auto=format&fit=crop"} alt={m.name} className="h-32 w-full object-cover" />
               <div className="p-4">
                 <div className="text-xs uppercase text-gray-500">{m.type}</div>
                 <div className="font-semibold text-gray-800">{m.name}</div>
@@ -135,21 +140,15 @@ const SpecialsTeaser = () => {
 };
 
 const GallerySection = () => {
-  const photos = [
-    "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1492683513059-b3e2b2c3b57f?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?q=80&w=1200&auto=format&fit=crop"
-  ];
+  const [photos, setPhotos] = useState([]);
+  useEffect(() => { api.getFeaturedGallery(6).then(setPhotos).catch(() => setPhotos([])); }, []);
   return (
     <section className="bg-orange-50">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <h2 className="text-3xl font-bold text-gray-800 text-center">The Atmosphere</h2>
         <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
-          {photos.map((src, idx) => (
-            <img key={idx} src={src} alt="Empire Bay" className="rounded-xl h-40 md:h-48 w-full object-cover shadow" />
+          {photos.map((p) => (
+            <img key={p.id} src={p.image_url} alt={p.title} className="rounded-xl h-40 md:h-48 w-full object-cover shadow" />
           ))}
         </div>
       </div>

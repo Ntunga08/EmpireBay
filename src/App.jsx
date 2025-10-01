@@ -7,6 +7,7 @@ import BarBookingForm from './pages/event/booking'
 import ComingEvent from './pages/event/comingEvent'
 import PastEvent from './pages/event/pastevent'
 import BarView from './pages/home/barView'
+import ContactPage from './pages/contact/contact'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="gallery" element={<Gallery />} />
           <Route path="events/coming" element={<ComingEvent />} />
           <Route path="events/past" element={<PastEvent />} />
+          <Route path="contact" element={<ContactPage />} />
         </Route>
         <Route path="/booking" element={<BarBookingForm />} />
       </Routes>

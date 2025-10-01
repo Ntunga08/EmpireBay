@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { api } from '../../utils/api';
 import { Calendar, Clock, Users, User, Mail, Phone, CheckCircle } from 'lucide-react';
 import sam1 from "../../assets/heroImage/sam1.jpeg"
 
@@ -64,11 +65,23 @@ const  BarBookingForm =() =>{
     }
   };
 
-  const handleSubmit = () => {
-    if (validateForm()) {
+  const handleSubmit = async () => {
+    if (!validateForm()) return;
+    try {
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        date: formData.date,
+        time: formData.time,
+        guests: Number(formData.guests),
+        table_type: formData.tableType,
+        special_requests: formData.specialRequests,
+      };
+      await api.postBooking(payload);
       setIsSubmitted(true);
-      // Here you would typically send data to your backend
-      console.log('Booking submitted:', formData);
+    } catch (e) {
+      alert('Failed to submit booking');
     }
   };
 
