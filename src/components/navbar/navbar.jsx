@@ -7,15 +7,15 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = React.useState(false);
   return (
     <nav className="shadow-md fixed w-full top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-3 flex bg-[#142746] justify-between items-center rounded-full  ">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex bg-gradient-to-r from-cyan-600 to-cyan-700 justify-between items-center rounded-full  ">
         {/* Logo */}
         <h1 className="text-2xl font-bold text-white">Empire Bay</h1>
 
         {/* Menu Links */}
         <ul className="hidden md:flex space-x-8 text-white font-medium items-center">
-          <li><Link to="/" className="hover:text-green-200">Home</Link></li>
-          <li><Link to="/about" className="hover:text-white">About</Link></li>
-          <li><a href="#menu" className="hover:text-white">Menu</a></li>
+          <li><Link to="/" className="hover:text-cyan-200">Home</Link></li>
+          <li><Link to="/about" className="hover:text-cyan-200">About</Link></li>
+          <li><a href="#menu" className="hover:text-cyan-200">Menu</a></li>
           <li className="relative group">
             <span className="hover:text-white cursor-pointer">Events</span>
             <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block bg-white text-gray-800 rounded-lg shadow-lg w-56 py-2">
@@ -25,19 +25,19 @@ const Navbar = () => {
               <Link to="/" className="block px-4 py-2 hover:bg-gray-100">Bar View</Link>
             </div>
           </li>
-          <li><a href="#contact" className="hover:text-white">Contact</a></li>
+          <li><a href="#contact" className="hover:text-cyan-200">Contact</a></li>
         </ul>
 
         {/* Button */}
         <a
           href="#reserve"
-          className="hidden md:inline-block bg-blue-900 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
+          className="hidden md:inline-block bg-orange-500 text-white px-5 py-2 rounded-lg font-semibold hover:bg-orange-600 transition"
         >
           Reserve Table
         </a>
 
         {/* Mobile menu button */}
-        <button className="md:hidden text-gray-700 text-3xl"
+        <button className="md:hidden text-white text-3xl"
         onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? '✖' : '☰'}
         </button>
